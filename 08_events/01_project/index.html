@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Changing Background Color</h1>
+    <input type="button" value="Start" id="start">
+    <input type="button" value="stop" id="stop">
+
+    <script>
+        function hexColor(){
+            let hex='0123456789ABCDEF'
+
+            let color = '#';
+
+            for (let index = 0; index < 6; index++) {
+                color = color + hex[Math.floor(Math.random() * 16)];
+                console.log(color)
+            }
+            return color;
+        }
+        let a;
+        document.getElementById("start").addEventListener('click',function(){
+             if(a==null){          //null is used to release memory
+                a = setInterval(() => {
+                document.body.style.backgroundColor=hexColor();
+            }, 1000);
+             }
+        })
+
+        document.getElementById("stop").addEventListener('click',function(){
+            clearInterval(a);
+            a=null;
+        })
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height:100px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="ab">
+        <li><img src="../Images/img0.jpg" alt="" id="img0"></li>
+        <li><img src="../Images/img5.jpg" alt="" id="img5"></li>
+        <li><img src="../Images/img6.jpg" alt="" id="img6"></li>
+        <li><img src="../Images/img8.jpg" alt="" id="img8"></li>
+        <li><img src="../Images/img9.jpg" alt="" id="img9"></li>
+    </ul>
+
+    <script>
+        document.getElementById("ab").addEventListener('click',function(e){
+            console.log("ul clicked")
+            e.stopPropagation();
+        },true);
+
+        document.getElementById("img5").addEventListener('click',function(e){
+            console.log("image clicked")
+            e.stopPropagation();
+        },true)
+        
+    </script>
+
+</body>
+</html>

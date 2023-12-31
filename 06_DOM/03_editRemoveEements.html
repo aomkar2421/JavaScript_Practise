@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="ula">
+        <li>JAVA</li>
+    </ul>
+    <script>
+        // but it is not optimized as for addin node it has to make iterations till end 
+        let a=document.createElement("li");
+        a.innerHTML="javascript"
+        let b=document.querySelector(".ula");
+        b.appendChild(a);
+
+        let c=document.createElement("li")
+        c.innerHTML="react"
+        b.appendChild(c)
+
+        //this is optmized way also we can create function
+        let d=document.createElement("li")
+        d.appendChild(document.createTextNode("solidity"));
+        b.appendChild(d)
+
+        function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.ula').appendChild(li)
+        }
+        addOptiLanguage('golang')
+
+
+        //Edit
+        let sec=document.querySelector("li:nth-child(2)")
+        //sec.innerHTML="abc"
+        //sec.outerHTML="<h1>JS</h1>"
+        let l=document.createElement("li").textContent="JAVASCRIPT";
+        sec.replaceWith(l)
+
+        //remove
+        const lastLang = document.querySelector('li:last-child')
+        lastLang.remove()
+
+    </script>
+</body>
+</html>
